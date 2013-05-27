@@ -1,0 +1,63 @@
+.fulltext-bubble:before,
+.fulltext-bubble.left:before {
+	background: transparent url('../img/bubble-arrow.png') no-repeat left top;
+	width: 8px;
+	height: 15px;
+	position: absolute;
+	left: -7px;
+	top: 50%;
+	margin-top: -7px;
+	content: "";
+}
+.fulltext-bubble.right:before {
+	left: auto;
+	top: 50%;
+	right: -7px;
+	-ms-transform: rotate(180deg);/*IE9*/
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);/*FF15*/
+	transform: rotate(180deg);
+}
+.fulltext-bubble {
+	border: 0px dashed #ccc;
+	padding: 10px 14px;
+	text-align: left;
+	position: relative;
+	display: inline-block;
+	margin: 0 0 0 7px;
+	/*-moz-box-sizing: border-box; box-sizing: border-box;*/
+	background-repeat:
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		repeat-x,
+		repeat-y,
+		repeat-x,
+		repeat-y;
+	background-image:
+		url('../img/roh_01.png'),
+		url('../img/roh_02.png'),
+		url('../img/roh_04.png'),
+		url('../img/roh_03.png'),
+		url('../img/s_vodorovne.png'),
+		url('../img/s_svisle.png'),
+		url('../img/s_vodorovne.png'),
+		url('../img/s_svisle.png');
+	background-position:
+		left top,
+		right top,
+		right bottom,
+		left bottom,
+		left top,
+		right top,
+		left bottom,
+		left top;
+}
+.fulltext-bubble.right { margin: 0 7px 0 0; }
+
+/* CSS pro IE8, šipka k bublině */
+.fulltext-bubble.ie8:before,
+.fulltext-bubble.ie8.left:before { left: -8px !important; background: transparent url('../img/bubble-arrow-ie8.png') no-repeat -25px 0; }
+.fulltext-bubble.ie8.right:before { left: auto !important; right: -8px !important; background-position: -17px 0; }
+/* --- */

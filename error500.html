@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<meta name="robots" content="noindex" />
+		<title>500 - Search.seznam.cz</title>
+		<link rel="shortcut icon" href="http://search.seznam.cz/img/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="css/speech-bubble.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/error-pages.css" media="all" />
+		<script type="text/javascript" src="js/jak.js"></script>
+		<script type="text/javascript" src="js/speech-bubble.js"></script>
+	</head>
+	<body class="errorpage e500">
+		<div id="page">
+			<div id="head" class="clear">
+				<a href="http://www.seznam.cz" class="logoSeznam"><img alt="Seznam.cz" src="http://search.seznam.cz/img/fulltext-logo-small.png" /></a>
+				<a href="http://www.seznam.cz" class="linkSeznam">Seznam</a>
+			</div>
+			<div id="container">
+				<div id="bubble" class="right">
+					<div class="problem">
+						Stydím se to říct,<br />
+						ale něco se porouchalo
+					</div>
+					<div class="text">Nebojte, brzy to opravíme. Zkuste to prosím za chvilku znovu.</div>
+					<div class="searchForm">
+							<input type="button" value="Zkusit znovu" onClick="document.location.reload(true);" />
+					</div>
+				</div>
+				<div id="pes500"></div>
+			</div>
+			<div id="foot">
+				<p>&copy; 1996&ndash;2013 Seznam.cz, a.s.</p>
+				<p>
+					<a href="http://napoveda.seznam.cz/cz/fulltext-hledani-v-internetu/zadavani-dotazu/">Nápověda</a>
+					&ndash; <a href="http://napoveda.seznam.cz/cz/services/">Technická podpora</a>
+				</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var speechbubble = new JAK.SpeechBubble([JAK.gel("bubble")]);
+		</script>
+	</body>
+</html>

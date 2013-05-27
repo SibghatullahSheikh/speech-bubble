@@ -1,0 +1,124 @@
+html, body	{ margin: 0; padding: 0; font-family: "Arial CE", Arial, "Helvetica CE", Helvetica, sans-serif; color: 000; background: #FFF; }
+/*- Definice zakladniho font-size, tak aby to spocitala i Opera -*/
+html	{ font-size:106.5%; }
+body	{ font-size:76.5%; }
+a		{ color:#0000CC; }
+a:hover	{ color:#CC0000; }
+img		{ border:0; }
+p, h1	{ margin: 0px; }
+ul		{ padding-left:1.2em; =margin-left:0; }
+
+.clear:after														{ content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+#page																{ padding:10px; text-align: center; position: relative; }
+
+#head																{ width: 100%; }
+#head .logoSeznam													{ float: left; }
+#head .linkSeznam													{ float: right; }
+
+#container															{ margin: 60px auto 90px; }
+#container > *														{ vertical-align: middle; display: inline-block; }
+#container #pes404													{ background: transparent url('../img/psi/pes404.png') left top no-repeat; width: 126px; height: 213px; }
+#container #pes500													{ background: transparent url('../img/psi/pes500.png') left top no-repeat; width: 264px; height: 195px; }
+#container #pesantidos												{ background: transparent url('../img/psi/pesantidos.png') left top no-repeat; width: 191px; height: 240px;margin-left: 15px; }
+#container #bubble	{
+	border: 0px dashed #ccc;
+	padding: 25px 42px 39px;
+	text-align: left;
+	margin-left: 30px;
+	position: relative;
+}
+.errorpage.e404 #container #bubble:before {
+	left: -7px;
+	top: 50px;
+	right: auto;
+	bottom: auto;
+}
+.errorpage.e500 #container #bubble:before {
+	left: auto;
+	top: auto;
+	right: -7px;
+	bottom: 27%;
+	-ms-transform: rotate(180deg);/*IE9*/
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);/*FF15*/
+	transform: rotate(180deg);
+}
+.errorpage.antidos #container #bubble:before {
+	left: auto;
+	right: -7px;
+	top: 37%;
+	-ms-transform: rotate(180deg);/*IE9*/
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);/*FF15*/
+	transform: rotate(180deg);
+}
+
+.errorpage #container #bubble div.problem										{ color:#C00; font-size: 36px; font-weight: bold; }
+.errorpage #container #bubble div.description									{ font-size: 24px; }
+.errorpage #container #bubble div.text											{ margin-top: 50px; color: #333; font-size: 14px; line-height: 22px; }
+.errorpage #container #bubble .wrong_message									{ display: none; color: #c00; font-size: 14px; line-height: 36px; }
+
+
+#foot																	{ clear: both; margin: 0 auto; }
+#foot p																	{ margin-bottom: 10px; color: #666; }
+#foot p:last-child														{ margin-bottom: 0; }
+
+
+.errorpage #container #bubble .searchForm					{ margin-top: 10px; width: 100%; }
+.errorpage #container #bubble .searchForm > *				{ -moz-box-sizing: border-box; box-sizing: border-box; }
+.errorpage #container #bubble .searchForm input				{ font-family: "Arial CE", Arial, "Helvetica CE", Helvetica, sans-serif; height: 36px; display: inline-block; }
+.errorpage #container #bubble .searchForm input:focus		{ outline: none; }
+.errorpage #container #bubble .searchForm input[type=text],
+.errorpage #container #bubble .searchForm input#sgWordCont	{
+	padding: 0 10px;
+	position: relative;
+	font-size: 123.5%;
+	background: #fff url('http://search.seznam.cz//img/search-text-bg.png') 0 0 repeat-x;/*když není podpora linear-gradient*/
+	background-image: -webkit-linear-gradient(to bottom, #ccc, #fff 2px);/*Chrome 25*/
+	background-image: -moz-linear-gradient(top, #ccc, #fff 2px);/*FF15*/
+	background-image: linear-gradient(to bottom, #ccc, #fff 2px);
+	border: 1px solid #c1c1c1;
+	border-color: #848484 #c1c1c1 #e1e1e1 #c1c1c1;
+	line-height: 36px;/*IE8*/
+}
+.errorpage #container #bubble .searchForm input[type=button],
+.errorpage #container #bubble .searchForm input[type=submit] {
+	font-size: 100%;
+	color: #333;
+	text-shadow: 1px 1px 0px #fff;
+	width: 146px;
+	background: #ececec url('http://search.seznam.cz/img/search-submit-bg.png') 0 0 repeat-x;/*když není podpora linear-gradient*/
+	background-image: -webkit-linear-gradient(to bottom, #fff, #ececec);/*Chrome 25*/
+	background-image: -moz-linear-gradient(top, #fff, #ececec);/*FF15*/
+	background-image: linear-gradient(to bottom, #fff, #ececec);
+	border: 1px solid #a1a1a1;
+	border-color: #c5c5c5 #7d7d7d #7b7b7b #a1a1a1;
+}
+.errorpage #container #bubble .searchForm input[type=button]:hover,
+.errorpage #container #bubble .searchForm input[type=submit]:hover					{ cursor: pointer; }
+.errorpage #container #bubble .searchForm input[type=button]:active,
+.errorpage #container #bubble .searchForm input[type=submit]:active					{ background: none repeat scroll 0 0 #E5E5E5; }
+
+.errorpage.e404 #container #bubble .searchForm input[type=text],
+.errorpage.e404 #container #bubble .searchForm input#sgWordCont			{ width: 382px; float: left; }
+.errorpage.e404 #container #bubble .searchForm input[type=submit]		{ width: 146px; margin-left: 1px; }
+
+.errorpage.antidos #container #bubble div.problem								{ white-space: inherit; }
+.errorpage.antidos #container #bubble div.description							{ font-size: 24px; margin: 20px 0 10px 0; }
+.errorpage.antidos #container #bubble .searchForm								{ margin-top: 10px; width: 170px; -moz-box-sizing: border-box; box-sizing: border-box; }
+.errorpage.antidos #container #bubble .searchForm *								{ -moz-box-sizing: border-box; box-sizing: border-box; }
+.errorpage.antidos #container #bubble .searchForm img.captcha					{ width: 170px; height: 70px; background-color: #eee; border: 1px solid #aaa; margin-bottom: 10px; display: block; }
+.errorpage.antidos #container #bubble .searchForm input							{ display: block; }
+.errorpage.antidos #container #bubble .searchForm input[type=text]				{ width: 100%; margin-bottom: 20px;}
+.errorpage.antidos #container #bubble .searchForm input[type=submit]			{ width: 100%; margin: 0; }
+.errorpage.antidos #container #bubble .searchForm .input_box					{ position: relative; display: inline-block; }
+.errorpage.antidos #container #bubble .searchForm.wrong input[name=captchaText]	{
+	border-color: #e13838;
+	background-image: url('http://search.seznam.cz/img/search-text-wrong-bg.png');/*když není podpora linear-gradient*/
+	background-image: -webkit-linear-gradient(to bottom, #f5cccc, #fff 2px);/*Chrome 25*/
+	background-image: -moz-linear-gradient(top, #f5cccc, #fff 2px);/*FF15*/
+	background-image: linear-gradient(to bottom, #f5cccc, #fff 2px);
+	display: inline-block;
+}
+.errorpage.antidos #container #bubble .searchForm.wrong .wrong_message			{ display: inline-block; position: absolute; margin-left: 10px; width: 180%; }

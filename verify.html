@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<meta name="robots" content="noindex" />
+		<title>AntiDOS - Search.seznam.cz</title>
+		<link rel="shortcut icon" href="http://search.seznam.cz/img/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="css/speech-bubble.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/error-pages.css" media="all" />
+		<script type="text/javascript" src="js/jak.js"></script>
+		<script type="text/javascript" src="js/speech-bubble.js"></script>
+	</head>
+	<body class="errorpage antidos">
+		<div id="page">
+			<div id="head" class="clear">
+				<a href="http://www.seznam.cz" class="logoSeznam"><img alt="Seznam.cz" src="http://search.seznam.cz/img/fulltext-logo-small.png" /></a>
+				<a href="http://www.seznam.cz" class="linkSeznam">Seznam</a>
+			</div>
+			<div id="container">
+				<div id="bubble" class="right">
+					<?teng if exist(.captchaId) ?>
+						<?teng set .__wrong = ($.status =~ 'invalid' ? "wrong" : "") ?>
+						<div class="problem">Ujistěte mě, že nejste robot</div>
+						<div class="description">Opište prosím kód:</div>
+						<form method="get" action="/verifyProcess" class="searchForm ${.__wrong}">
+							<img src="/getCaptcha?captchaId=${.captchaId}&amp;type=image&amp;ads=${.ads}" alt="Ověřovací kód" class="captcha" />
+							<input type="hidden" name="returnTo" value="${.returnTo}" />
+							<input type="hidden" name="rth" value="${.rth}" />
+							<input type="hidden" name="ads" value="${.ads}" />
+							<input type="hidden" name="captchaId" value="${.captchaId}" />
+							<span class="input_box">
+								<input type="text" value="" autocomplete="off" id="captchaText" name="captchaText" /><span class="wrong_message text">Špatně opsaný kód! Zkuste to znovu, prosím.</span>
+							</span>
+							<input type="submit" value="Potvrdit a pokračovat" />
+						</form>
+						<div class="text">
+							Omlouváme se za zdržení. V poslední době jsme zachytili z vaší sítě příliš<br />
+							mnoho hledání. Tímto chráníme naše vyhledávání před spam roboty.
+						</div>
+					<?teng else ?>
+						<div class="problem">Ouha!</div>
+						<div class="text">
+							V poslední době jsme zachytili z vaší sítě příliš mnoho hledání.<br />
+							Prosím, zkuste to později.
+						</div>
+					<?teng endif ?>
+				</div>
+				<div id="pesantidos"></div>
+			</div>
+			<div id="foot">
+				<p>&copy; 1996&ndash;${date('%Y',now())} Seznam.cz, a.s.</p>
+				<p>
+					<a href="http://napoveda.seznam.cz/cz/fulltext-hledani-v-internetu/zadavani-dotazu/">Nápověda</a>
+					&ndash; <a href="http://napoveda.seznam.cz/cz/services/">Technická podpora</a>
+				</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var speechbubble = new JAK.SpeechBubble([JAK.gel("bubble")]);
+			var captchaText = JAK.gel("captchaText");
+			if (captchaText) { captchaText.focus(); }
+		</script>
+		<?teng include file = "_stats.html" ?>
+		<?teng include file = "_debug.html" ?>
+	</body>
+</html>
+<?teng endformat?>
