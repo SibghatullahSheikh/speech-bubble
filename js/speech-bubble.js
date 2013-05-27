@@ -24,8 +24,6 @@ JAK.SpeechBubble.prototype.$constructor = function(elements, optObj) {
 	this._elements = elements;
 	/*this._ec = [];*/
 	this._options = {
-		imagePath: "",
-		imageFormat: "png",
 		sizes: {
 			line: 6,
 			corner: 12
@@ -40,7 +38,7 @@ JAK.SpeechBubble.prototype._build = function() {
 		var bubble = this._elements[i];
 		JAK.DOM.addClass(bubble, "fulltext-bubble");
 		/* IE8 a nižší, neumí border-radius ani multibackground */
-		if (JAK.Browser.client == "ie" && JAK.Browser.version < 9) {
+		if (!document.getElementsByClassName) {
 			var style = {
 				background: "transparent url('img/roh.png')",
 				width: this._options.sizes.corner + "px",
