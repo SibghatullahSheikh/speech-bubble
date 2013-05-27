@@ -10,7 +10,7 @@
  */
 JAK.SpeechBubble = JAK.ClassMaker.makeClass({
 	NAME: "SpeechBubble",
-	VERSION: "0.2"
+	VERSION: "0.2.1"
 });
 
 /**
@@ -24,6 +24,8 @@ JAK.SpeechBubble.prototype.$constructor = function(elements, optObj) {
 	this._elements = elements;
 	/*this._ec = [];*/
 	this._options = {
+		imagePath: "img/",
+		imageFormat: "png",
 		sizes: {
 			line: 6,
 			corner: 12
@@ -34,13 +36,14 @@ JAK.SpeechBubble.prototype.$constructor = function(elements, optObj) {
 };
 
 JAK.SpeechBubble.prototype._build = function() {
+	var opts = this._options;
 	for (i = 0; i < this._elements.length; i++) {
 		var bubble = this._elements[i];
 		JAK.DOM.addClass(bubble, "fulltext-bubble");
 		/* IE8 a nižší, neumí border-radius ani multibackground */
 		if (!document.getElementsByClassName) {
 			var style = {
-				background: "transparent url('img/roh.png')",
+				background: "transparent url('"+opts.imagePath+"roh.'"+opts.imageFormat+")",
 				width: this._options.sizes.corner + "px",
 				height: this._options.sizes.corner + "px",
 				position: "absolute"
